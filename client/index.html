@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BFHL Node Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>BFHL Node Explorer</h1>
+      <p>Enter node edges like <code>A->B</code>, one per line</p>
+    </header>
+
+    <section class="box">
+      <label for="input">Node Edges</label>
+      <textarea id="input" rows="10" placeholder="A->B&#10;A->C&#10;B->D&#10;hello&#10;1->2"></textarea>
+      <div class="row">
+        <button id="clearBtn">Clear</button>
+        <button id="exampleBtn">Load Example</button>
+        <button id="submitBtn">Analyse →</button>
+      </div>
+      <div id="error" class="error hidden"></div>
+    </section>
+
+    <div id="results" class="hidden">
+      <section class="box">
+        <h2>Identity</h2>
+        <table class="info-table">
+          <tr><td>User ID</td><td id="userId"></td></tr>
+          <tr><td>Email</td><td id="email"></td></tr>
+          <tr><td>Roll No.</td><td id="roll"></td></tr>
+        </table>
+      </section>
+
+      <section class="box">
+        <h2>Summary</h2>
+        <div class="summary-row">
+          <div class="summary-card trees">
+            <div class="num" id="totalTrees">0</div>
+            <div class="lbl">Trees</div>
+          </div>
+          <div class="summary-card cycles">
+            <div class="num" id="totalCycles">0</div>
+            <div class="lbl">Cycles</div>
+          </div>
+          <div class="summary-card root">
+            <div class="num" id="largestRoot">—</div>
+            <div class="lbl">Largest Root</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="box">
+        <h2>Hierarchies</h2>
+        <div id="hierarchies"></div>
+      </section>
+
+      <div class="two-col">
+        <section class="box">
+          <h2>Invalid Entries</h2>
+          <div id="invalids" class="tag-area"></div>
+        </section>
+        <section class="box">
+          <h2>Duplicate Edges</h2>
+          <div id="dupes" class="tag-area"></div>
+        </section>
+      </div>
+
+      <section class="box">
+        <div class="row">
+          <h2>Raw JSON</h2>
+          <button id="copyBtn">Copy</button>
+        </div>
+        <pre id="json"></pre>
+      </section>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
