@@ -1,5 +1,5 @@
 const devHosts = ['localhost', '127.0.0.1', ''];
-const apiRoot  = devHosts.includes(location.hostname) ? 'http://localhost:3001' : '';
+const apiRoot  = devHosts.includes(location.hostname) ? 'http://localhost:3001' : 'https://bfhl-a65n.onrender.com';
 
 const DEMO_INPUT = [
   "A->B", "A->C", "B->D", "C->E", "E->F",
