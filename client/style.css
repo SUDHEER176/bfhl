@@ -95,7 +95,6 @@ button:hover { opacity: 0.85; }
 button:disabled { opacity: 0.5; cursor: not-allowed; }
 
 #clearBtn   { background: #1e1b2e; color: #888; }
-#exampleBtn { background: #1e1b2e; color: #a78bfa; border: 1px solid #3d3570; }
 #submitBtn  { background: #7c3aed; color: #fff; margin-left: auto; }
 #copyBtn    { background: #1e1b2e; color: #888; font-size: 0.78rem; padding: 6px 12px; margin-left: auto; }
 

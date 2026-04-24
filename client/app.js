@@ -1,20 +1,11 @@
 const devHosts = ['localhost', '127.0.0.1', ''];
 const apiRoot  = devHosts.includes(location.hostname) ? 'http://localhost:3001' : 'https://bfhl-a65n.onrender.com';
 
-const DEMO_INPUT = [
-  "A->B", "A->C", "B->D", "C->E", "E->F",
-  "X->Y", "Y->Z", "Z->X",
-  "P->Q", "Q->R",
-  "G->H", "G->H", "G->I",
-  "hello", "1->2", "A->"
-].join('\n');
-
 const q = id => document.getElementById(id);
 
 const inputBox   = q('input');
 const btnSubmit  = q('submitBtn');
 const btnClear   = q('clearBtn');
-const btnExample = q('exampleBtn');
 const errBox     = q('error');
 const resultPane = q('results');
 const btnCopy    = q('copyBtn');
@@ -148,11 +139,6 @@ inputBox.addEventListener('keydown', e => {
 btnClear.addEventListener('click', () => {
   inputBox.value = '';
   resultPane.classList.add('hidden');
-  clearError();
-});
-
-btnExample.addEventListener('click', () => {
-  inputBox.value = DEMO_INPUT;
   clearError();
 });
 
